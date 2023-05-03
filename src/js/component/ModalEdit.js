@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
 
-export const Modal = props => {
-	const [state, setState] = useState({
+export const ModalEdit = props => {
+	const [edit, setEdit] = useState({
 		//initialize state here
 	});
 	const { actions } = useContext(Context);
@@ -14,7 +14,7 @@ export const Modal = props => {
 			<div className="modal-dialog" role="document">
 				<div className="modal-content">
 					<div className="modal-header">
-						<h5 className="modal-title">Are you sure?</h5>
+						<h5 className="modal-title">Edit Contact</h5>
 						{props.onClose ? (
 							<button
 								onClick={() => props.onClose()}
@@ -28,23 +28,28 @@ export const Modal = props => {
 							""
 						)}
 					</div>
-					<div className="modal-body">
-						<p>Warning: unknown consequences after this point... Kidding!</p>
-					</div>
-					<div className="modal-footer">
-						<button type="button" className="btn btn-primary">
-							Oh no!
-						</button>
-						<button
-							type="button"
-							className="btn btn-secondary"
-							data-dismiss="modal"
-							onClick={() => {
-								actions.onDelete(props.id);
-							}}>
-							Do it!
-						</button>
-					</div>
+					<form>
+						<div className="modal-body">
+							<input type="text" name="name" placeholder="Name"></input>
+							<input type="text" name="email" placeholder="email"></input>
+							<input type="text" name="phone" placeholder="phone"></input>
+							<input type="text" name="adress" placeholder="address"></input>
+						</div>
+						<div className="modal-footer">
+							<button type="button" className="btn btn-primary">
+								Oh no!
+							</button>
+							<button
+								type="button"
+								className="btn btn-secondary"
+								data-dismiss="modal"
+								onClick={() => {
+									actions.onDelete(props.id);
+								}}>
+								Do it!
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -54,7 +59,7 @@ export const Modal = props => {
  * Define the data-types for
  * your component's properties
  **/
-Modal.propTypes = {
+ModalEdit.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
@@ -65,7 +70,7 @@ Modal.propTypes = {
  * Define the default values for
  * your component's properties
  **/
-Modal.defaultProps = {
+ModalEdit.defaultProps = {
 	show: false,
 	onClose: null
 };
