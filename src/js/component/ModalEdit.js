@@ -8,6 +8,11 @@ export const ModalEdit = props => {
 	const [edit, setEdit] = useState({
 		//initialize state here
 	});
+	const [fullName, setFullName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phone, setPhone] = useState("");
+	const [adress, setAdress] = useState("");
+
 	const { actions } = useContext(Context);
 	return (
 		<div className="modal" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
@@ -30,10 +35,31 @@ export const ModalEdit = props => {
 					</div>
 					<form>
 						<div className="modal-body">
-							<input type="text" name="name" placeholder="Name"></input>
-							<input type="text" name="email" placeholder="email"></input>
-							<input type="text" name="phone" placeholder="phone"></input>
-							<input type="text" name="adress" placeholder="address"></input>
+							<input
+								type="text"
+								name="name"
+								placeholder="Name"
+								value={fullName}
+								onChange={e => setFullName(e.target.value)}></input>
+
+							<input
+								type="text"
+								name="email"
+								placeholder="email"
+								value={email}
+								onChange={e => setEmail(e.target.value)}></input>
+							<input
+								type="text"
+								name="phone"
+								placeholder="phone"
+								value={phone}
+								onChange={e => setPhone(e.target.value)}></input>
+							<input
+								type="text"
+								name="adress"
+								placeholder="address"
+								value={adress}
+								onChange={e => setAdress(e.target.value)}></input>
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-primary">
@@ -44,7 +70,7 @@ export const ModalEdit = props => {
 								className="btn btn-secondary"
 								data-dismiss="modal"
 								onClick={() => {
-									actions.onDelete(props.id);
+									actions.editContact(fullName, email, phone, adress, props.id);
 								}}>
 								Do it!
 							</button>

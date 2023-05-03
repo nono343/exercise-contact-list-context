@@ -48,7 +48,7 @@ export const Contacts = () => {
 							))
 						) : (
 							<button type="button" className="btn btn-warning">
-								No hay tareas. Agrega tareas para recordarlas!
+								No hay contactos. Agrega contactos para mostrarlos!
 							</button>
 						)}
 					</ul>

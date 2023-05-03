@@ -59,15 +59,14 @@ const getState = ({ getStore, setStore }) => {
 				};
 				console.log(name);
 				// ésta es la URL donde se va a hacer el POST, con sus respectiva configuración (método, tipo de dato, y el cuerpo)
-				// 	fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
-				// 		method: "POST",
-				// 		body: JSON.stringify(_datos),
-				// 		headers: { "Content-type": "application/json; charset=UTF-8" }
-				// 	}) // ésta son las promesas (convertir a .json, los logs sólo son para mostrar en consola, y si hubiese un error)
-				// 		.then(response => response.json())
-				// 		.then(data => console.log(data))
-				// 		.catch(err => console.log(err));
-				// },
+				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+					method: "PUT",
+					body: JSON.stringify(_datos),
+					headers: { "Content-type": "application/json; charset=UTF-8" }
+				}) // ésta son las promesas (convertir a .json, los logs sólo son para mostrar en consola, y si hubiese un error)
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(err => console.log(err));
 			},
 			onDelete: id => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
