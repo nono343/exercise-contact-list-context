@@ -41,6 +41,7 @@ export const Modal = props => {
 							data-dismiss="modal"
 							onClick={() => {
 								actions.onDelete(props.id);
+								window.location.reload();
 							}}>
 							Do it!
 						</button>

@@ -25,7 +25,7 @@ const getState = ({ getStore, setStore }) => {
 				let _datos = {
 					full_name: name,
 					email: email,
-					agenda_slug: "Aleja",
+					agenda_slug: "agamero",
 					address: adress,
 					phone: phone
 				};
@@ -42,7 +42,7 @@ const getState = ({ getStore, setStore }) => {
 
 			obtenerContactos: () => {
 				// setStore({ propiedad:valor }) es un objeto. Es como siempre actualizamos un cambio de memoria de Store
-				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/Aleja")
+				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/agamero")
 					// Exito
 					.then(response => response.json()) // convertir a json <== es un metodo, se queda así
 					.then(data => setStore({ contactList: data })) //imprimir los datos en la consola
@@ -53,7 +53,7 @@ const getState = ({ getStore, setStore }) => {
 				let _datos = {
 					full_name: name,
 					email: email,
-					agenda_slug: "Aleja",
+					agenda_slug: "agamero",
 					address: adress,
 					phone: phone
 				};

@@ -71,6 +71,7 @@ export const ModalEdit = props => {
 								data-dismiss="modal"
 								onClick={() => {
 									actions.editContact(fullName, email, phone, adress, props.id);
+									window.location.reload();
 								}}>
 								Do it!
 							</button>
